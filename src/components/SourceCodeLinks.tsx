@@ -1,5 +1,5 @@
 import "./profileZombie.css";
-import { Box, Flex, Text } from "@chakra-ui/layout";
+import { Flex, Text } from "@chakra-ui/layout";
 import { Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
