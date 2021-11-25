@@ -30,6 +30,7 @@ function App() {
             <Layout>
                 <ConnectButton handleOpenModal={onOpen} />
                 <AccountModal isOpen={isOpen} onClose={onClose} />
+
                 {account ? (
                     <>
                         <Flex width="100%" justify="start">

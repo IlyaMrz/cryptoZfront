@@ -262,8 +262,8 @@ function ProfileZombie({ id }: IProps) {
                 </Text>
             )}
             <Box mt="10px" color="red.400">
-                * - App doesn't show transaction events yet. please check your transaction status on
-                Etherscan.
+                * Warning - App doesn't show transaction events yet. please check your transaction
+                status on Etherscan.
             </Box>
         </Flex>
     );
