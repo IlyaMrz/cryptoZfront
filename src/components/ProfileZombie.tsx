@@ -130,8 +130,8 @@ function ProfileZombie({ id }: IProps) {
                             >
                                 Buy level up (cost 0.001 eth)
                             </Box>
-                            <Flex direction="column" className="interactField">
-                                <Text onClick={() => setisName(!isName)}>
+                            <Flex cursor="default" direction="column" className="interactField">
+                                <Text cursor="pointer" onClick={() => setisName(!isName)}>
                                     Change Name {"(lvl must be > 2)"}
                                 </Text>
                                 {isName ? (
@@ -157,8 +157,8 @@ function ProfileZombie({ id }: IProps) {
                                 )}
                             </Flex>
 
-                            <Flex direction="column" className="interactField">
-                                <Text onClick={() => setisDna(!isDna)}>
+                            <Flex cursor="default" direction="column" className="interactField">
+                                <Text cursor="pointer" onClick={() => setisDna(!isDna)}>
                                     Change DNA {"(lvl must be > 20)"}
                                 </Text>
                                 {isDna ? (
@@ -183,8 +183,11 @@ function ProfileZombie({ id }: IProps) {
                                     ""
                                 )}
                             </Flex>
-                            <Flex direction="column" className="interactField">
-                                <Text onClick={() => setisAddresToTransfer(!isAddresToTransfer)}>
+                            <Flex cursor="default" direction="column" className="interactField">
+                                <Text
+                                    cursor="pointer"
+                                    onClick={() => setisAddresToTransfer(!isAddresToTransfer)}
+                                >
                                     Transfer
                                 </Text>
                                 {isAddresToTransfer ? (
