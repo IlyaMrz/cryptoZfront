@@ -263,7 +263,8 @@ function ProfileZombie({ id }: IProps) {
             )}
             <Box mt="10px" color="red.400">
                 * Warning - App doesn't show transaction events yet. please check your transaction
-                status on Etherscan.
+                status on Etherscan. <br></br>
+                If transaction denied be sure this zombie has a required Level.
             </Box>
         </Flex>
     );
