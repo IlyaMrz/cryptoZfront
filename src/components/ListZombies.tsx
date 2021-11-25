@@ -8,7 +8,7 @@ export default function ListZombies() {
 
     return (
         <Flex direction="column" align="center">
-            <Text color="white">Your zombie Army</Text>
+            <Text color="white">You have {idsArray ? idsArray[0].length : 0} zombie(s) Army</Text>
             <Flex maxWidth="1100px" flexDirection="row" flexFlow="wrap" justify="center">
                 {idsArray ? (
                     idsArray[0].map((idd: any) => {

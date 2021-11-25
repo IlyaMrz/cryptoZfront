@@ -37,7 +37,7 @@ export function useListZombiesByOwner() {
         });
         return idsArray2 ? idsArray2 : "";
     }
-    return ZombieIds;
+    // return ZombieIds;
 }
 
 const contract = new Contract(simpleContractAddress, simpleContractInterface);
