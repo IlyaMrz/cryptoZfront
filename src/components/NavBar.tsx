@@ -13,6 +13,9 @@ function NavBar({ handleChoose }: IProps) {
     function handleCreate() {
         handleChoose(-1);
     }
+    function handleSource() {
+        handleChoose(-2);
+    }
     return (
         <Flex width="100%" justifyContent="space-around">
             <Flex>
@@ -41,18 +44,32 @@ function NavBar({ handleChoose }: IProps) {
                     Create Zombie
                 </Box>
             </Flex>
-            <Link
-                cursor="pointer"
-                borderRadius="7px"
-                p="7px"
-                m="5px"
-                bg="gray.700"
-                color="white"
-                href="https://ropsten.etherscan.io/address/0x185Eb02Bdd555A3920b40496FBEd13098E269BA0"
-                isExternal
-            >
-                Open Contract on Etherscan <ExternalLinkIcon mb="2px" mx="2px" />
-            </Link>
+            <Flex>
+                <Box
+                    onClick={() => handleSource()}
+                    cursor="pointer"
+                    borderRadius="7px"
+                    p="7px"
+                    m="5px"
+                    bg="gray.700"
+                    color="white"
+                    isExternal
+                >
+                    Source Code Links
+                </Box>
+                <Link
+                    cursor="pointer"
+                    borderRadius="7px"
+                    p="7px"
+                    m="5px"
+                    bg="gray.700"
+                    color="white"
+                    href="https://ropsten.etherscan.io/address/0x185Eb02Bdd555A3920b40496FBEd13098E269BA0"
+                    isExternal
+                >
+                    Open Contract on Etherscan <ExternalLinkIcon mb="2px" mx="2px" />
+                </Link>
+            </Flex>
         </Flex>
     );
 }

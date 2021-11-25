@@ -13,6 +13,7 @@ import { useEthers } from "@usedapp/core";
 import { Text } from "@chakra-ui/react";
 import { useState } from "react";
 import ProfileZombie from "./components/ProfileZombie";
+import SourceCodeLinks from "./components/SourceCodeLinks";
 
 type CallbackFunction = (id: any) => void;
 
@@ -40,6 +41,8 @@ function App() {
                                 <ListZombies handleChoose={handleChoose} />
                             ) : choosenId === -1 ? (
                                 <CreateZombie />
+                            ) : choosenId === -2 ? (
+                                <SourceCodeLinks />
                             ) : choosenId >= 0 ? (
                                 <ProfileZombie id={choosenId} />
                             ) : (
