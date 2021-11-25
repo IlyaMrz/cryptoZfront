@@ -12,16 +12,26 @@ export default function ListZombies({ handleChoose }: IProps) {
 
     return (
         <Flex direction="column" align="center">
-            <Text color="white">You have {idsArray ? idsArray[0].length : 0} zombie(s) Army</Text>
-            <Flex maxWidth="1100px" flexDirection="row" flexFlow="wrap" justify="center">
-                {idsArray ? (
-                    idsArray[0].map((idd: any) => {
-                        return <ZombieInfo id={idd} key={idd} handleChoose={handleChoose} />;
-                    })
-                ) : (
-                    <Text color="white">none or loading</Text>
-                )}
-            </Flex>
+            {!idsArray ? (
+                <Text color="white">Loading... or none</Text>
+            ) : (
+                <>
+                    <Text color="white">You have {idsArray[0].length} zombie(s) Collection</Text>
+                    <Flex maxWidth="1100px" flexDirection="row" flexFlow="wrap" justify="center">
+                        {
+                            // idsArray ? (
+                            idsArray[0].map((idd: any) => {
+                                return (
+                                    <ZombieInfo id={idd} key={idd} handleChoose={handleChoose} />
+                                );
+                            })
+                            // ) : (
+                            //     <Text color="white">none or loading</Text>
+                            // )
+                        }
+                    </Flex>
+                </>
+            )}
         </Flex>
     );
 }

@@ -57,7 +57,7 @@ export default function ZombieInfo({ id, handleChoose }: IProps) {
                         {ZombieInfo[5]} - loss
                     </Text>
                     <Text color="white" fontSize="1xl" align="center">
-                        Identity Doc: {id}
+                        iD: {id}
                     </Text>
                     {isHover ? (
                         <Flex mt="5px" direction="row" justifyContent="center">

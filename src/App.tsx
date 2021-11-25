@@ -41,9 +41,9 @@ function App() {
                             ) : choosenId === -1 ? (
                                 <CreateZombie />
                             ) : choosenId >= 0 ? (
-                                <ProfileZombie />
+                                <ProfileZombie id={choosenId} />
                             ) : (
-                                <div>hmmmm</div>
+                                <div>hmmmm something wrong</div>
                             )}
                         </LayoutInnerApp>
                     </>

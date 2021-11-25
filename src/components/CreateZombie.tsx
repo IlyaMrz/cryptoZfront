@@ -46,8 +46,12 @@ function CreateZombie() {
                     </Flex>
                 </Flex>
             ) : (
-                <Text color="white">
-                    Please wait. Creation could take a while. Go in yout list of zombies
+                <Text color="white" alignContent="center" textAlign="center">
+                    Confirm a transaction with your wallet <br></br>
+                    ... <br></br>
+                    Please be patien. Creation could take a while. <br></br>
+                    Go in yout list of zombies.<br></br>
+                    Wait and a new zombie should Appear there.
                 </Text>
             )}
         </Flex>
