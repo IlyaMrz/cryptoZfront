@@ -29,7 +29,11 @@ export default function ZombieInfo({ id }: IProps) {
                     }}
                 >
                     <Flex justify="center">
-                        <Image src={`https://robohash.org/${id}.png?set=set2&size=100x100`} />
+                        {ZombieInfo[1].toNumber() % 100 === 99 ? (
+                            <Image src={`https://robohash.org/${id}.png?set=set4&size=100x100`} />
+                        ) : (
+                            <Image src={`https://robohash.org/${id}.png?set=set2&size=100x100`} />
+                        )}
                     </Flex>
                     <Text color="white" fontSize="1xl" align="center">
                         {ZombieInfo[0]}
@@ -45,6 +49,9 @@ export default function ZombieInfo({ id }: IProps) {
                     </Text>
                     <Text color="white" fontSize="1xl" align="center">
                         {ZombieInfo[5]} - loss
+                    </Text>
+                    <Text color="white" fontSize="1xl" align="center">
+                        Identity Doc: {id}
                     </Text>
                     {isHover ? (
                         <Flex mt="5px" direction="row" justifyContent="center">
