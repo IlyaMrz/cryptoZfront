@@ -11,10 +11,19 @@ import { Flex } from "@chakra-ui/layout";
 import CreateZombie from "./components/CreateZombie";
 import { useEthers } from "@usedapp/core";
 import { Text } from "@chakra-ui/react";
+import { useState } from "react";
+import ProfileZombie from "./components/ProfileZombie";
+
+type CallbackFunction = (id: any) => void;
 
 function App() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { account } = useEthers();
+    const [choosenId, setChoosenId] = useState<any>(false);
+
+    const handleChoose: CallbackFunction = (id) => {
+        setChoosenId(id);
+    };
     return (
         <ChakraProvider theme={theme}>
             <Layout>
@@ -22,13 +31,20 @@ function App() {
                 <AccountModal isOpen={isOpen} onClose={onClose} />
                 {account ? (
                     <>
-                        <Flex width="100%" justify="center">
-                            <NavBar />
+                        <Flex width="100%" justify="start">
+                            <NavBar handleChoose={handleChoose} />
                         </Flex>
 
                         <LayoutInnerApp>
-                            <CreateZombie />
-                            <ListZombies />
+                            {!choosenId ? (
+                                <ListZombies handleChoose={handleChoose} />
+                            ) : choosenId === -1 ? (
+                                <CreateZombie />
+                            ) : choosenId >= 0 ? (
+                                <ProfileZombie />
+                            ) : (
+                                <div>hmmmm</div>
+                            )}
                         </LayoutInnerApp>
                     </>
                 ) : (

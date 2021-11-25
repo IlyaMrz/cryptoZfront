@@ -4,11 +4,17 @@ import { useZombieInfo } from "../hooks";
 
 interface IProps {
     id: string;
+    handleChoose: (id: any) => void;
 }
 
-export default function ZombieInfo({ id }: IProps) {
+export default function ZombieInfo({ id, handleChoose }: IProps) {
     const ZombieInfo = useZombieInfo(id);
     const [isHover, setIsHover] = useState<boolean>(false);
+
+    function handleButton() {
+        handleChoose(id);
+    }
+
     return (
         <Flex
             onMouseEnter={() => setIsHover(!isHover)}
@@ -60,6 +66,7 @@ export default function ZombieInfo({ id }: IProps) {
                                 colorScheme="teal"
                                 size="lg"
                                 justifyContent="center"
+                                onClick={handleButton}
                             >
                                 choose
                             </Button>

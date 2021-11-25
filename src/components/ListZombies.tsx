@@ -3,7 +3,11 @@ import { Flex, Text } from "@chakra-ui/react";
 import { useListZombiesByOwner } from "../hooks";
 import ZombieInfo from "./ZombieInfo";
 
-export default function ListZombies() {
+interface IProps {
+    handleChoose: (id: any) => void;
+}
+
+export default function ListZombies({ handleChoose }: IProps) {
     const idsArray = useListZombiesByOwner();
 
     return (
@@ -12,7 +16,7 @@ export default function ListZombies() {
             <Flex maxWidth="1100px" flexDirection="row" flexFlow="wrap" justify="center">
                 {idsArray ? (
                     idsArray[0].map((idd: any) => {
-                        return <ZombieInfo id={idd} key={idd} />;
+                        return <ZombieInfo id={idd} key={idd} handleChoose={handleChoose} />;
                     })
                 ) : (
                     <Text color="white">none or loading</Text>
