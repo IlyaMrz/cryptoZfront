@@ -7,8 +7,6 @@ import { Button } from "@chakra-ui/button";
 import { useContractMethod_fixd, useZombieInfo } from "../hooks";
 import { useEffect, useState } from "react";
 import { useEthers } from "@usedapp/core";
-import Spinner from "./Spinner";
-import HandeTranzState from "./HandeTranzState";
 
 interface IProps {
     id: any;
@@ -309,9 +307,7 @@ function ProfileZombie({ id }: IProps) {
                 </Text>
             )}
             <Box mt="10px" color="red.400">
-                * Warning - App doesn't show transaction events yet. please check your transaction
-                status on Etherscan. <br></br>
-                If transaction denied be sure this zombie has a required Level.
+                * Warning - Be sure zombie have required level for certain action
             </Box>
         </Flex>
     );
