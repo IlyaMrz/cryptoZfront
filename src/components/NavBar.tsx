@@ -53,7 +53,6 @@ function NavBar({ handleChoose }: IProps) {
                     m="5px"
                     bg="gray.700"
                     color="white"
-                    isExternal
                 >
                     Source Code Links
                 </Box>

@@ -9,7 +9,7 @@ function CreateZombie() {
     const [created, setCreated] = useState<boolean>(false);
     const {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        state: setZombieName,
+        state: setZombieNameState,
         send: createZombie,
         events,
     } = useContractMethod_fixd("createRandomZombie");
@@ -23,7 +23,6 @@ function CreateZombie() {
             setCreated(true);
         }
     }
-    console.log("events ", events);
     return (
         <Flex direction="column" mt="70">
             {!created ? (
@@ -47,11 +46,20 @@ function CreateZombie() {
                 </Flex>
             ) : (
                 <Text color="white" alignContent="center" textAlign="center">
+                    {setZombieNameState.status === "None" ? (
+                        ""
+                    ) : setZombieNameState.status === "Mining" ? (
+                        <Text>Mining...</Text>
+                    ) : setZombieNameState.status === "Success" ? (
+                        <Text color="green.400">Success </Text>
+                    ) : (
+                        setZombieNameState.status
+                    )}
                     Confirm a transaction with your wallet <br></br>
                     ... <br></br>
                     Please be patien. Creation could take a while. <br></br>
-                    Go in yout list of zombies.<br></br>
-                    Wait and a new zombie should Appear there.
+                    After success go in yout list of zombies.<br></br>A brand new zombie should
+                    Appear there.
                 </Text>
             )}
         </Flex>

@@ -5,8 +5,10 @@ import { Input } from "@chakra-ui/input";
 import { Button } from "@chakra-ui/button";
 
 import { useContractMethod_fixd, useZombieInfo } from "../hooks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useEthers } from "@usedapp/core";
+import Spinner from "./Spinner";
+import HandeTranzState from "./HandeTranzState";
 
 interface IProps {
     id: any;
@@ -116,10 +118,28 @@ function ProfileZombie({ id }: IProps) {
                                 Interact with this Zombie
                             </Text>
                             <Box onClick={() => handleToAttack(id)} className="interactField">
-                                Attack some zombie
+                                <Text>Attack some zombie</Text>
+                                {stateAttack.status === "None" ? (
+                                    ""
+                                ) : stateAttack.status === "Mining" ? (
+                                    <Text>Mining...</Text>
+                                ) : stateAttack.status === "Success" ? (
+                                    <Text color="green.400">Success </Text>
+                                ) : (
+                                    stateAttack.status
+                                )}
                             </Box>
                             <Box onClick={() => handleFeedOnKitty(id)} className="interactField">
-                                Eat kitty
+                                <Text>Eat kitty</Text>
+                                {stateFeedOnKitty.status === "None" ? (
+                                    ""
+                                ) : stateFeedOnKitty.status === "Mining" ? (
+                                    <Text>Mining...</Text>
+                                ) : stateFeedOnKitty.status === "Success" ? (
+                                    <Text color="green.400">Success </Text>
+                                ) : (
+                                    stateFeedOnKitty.status
+                                )}
                             </Box>
                             <Box
                                 onClick={() => {
@@ -128,11 +148,30 @@ function ProfileZombie({ id }: IProps) {
                                 className="interactField"
                             >
                                 Buy level up (cost 0.001 eth)
+                                {stateBuyLeveUp.status === "None" ? (
+                                    ""
+                                ) : stateBuyLeveUp.status === "Mining" ? (
+                                    <Text>Mining...</Text>
+                                ) : stateBuyLeveUp.status === "Success" ? (
+                                    <Text color="green.400">Success </Text>
+                                ) : (
+                                    stateBuyLeveUp.status
+                                )}
                             </Box>
                             <Flex cursor="default" direction="column" className="interactField">
                                 <Text cursor="pointer" onClick={() => setisName(!isName)}>
                                     Change Name {"(lvl must be > 2)"}
                                 </Text>
+                                {stateChangeName.status === "None" ? (
+                                    ""
+                                ) : stateChangeName.status === "Mining" ? (
+                                    <Text>Mining...</Text>
+                                ) : stateChangeName.status === "Success" ? (
+                                    <Text color="green.400">Success </Text>
+                                ) : (
+                                    stateChangeName.status
+                                )}
+
                                 {isName ? (
                                     <Flex mt="15px">
                                         <Input
@@ -160,6 +199,15 @@ function ProfileZombie({ id }: IProps) {
                                 <Text cursor="pointer" onClick={() => setisDna(!isDna)}>
                                     Change DNA {"(lvl must be > 20)"}
                                 </Text>
+                                {stateChangeDna.status === "None" ? (
+                                    ""
+                                ) : stateChangeDna.status === "Mining" ? (
+                                    <Text>Mining...</Text>
+                                ) : stateChangeDna.status === "Success" ? (
+                                    <Text color="green.400">Success </Text>
+                                ) : (
+                                    stateChangeDna.status
+                                )}
                                 {isDna ? (
                                     <Flex mt="15px">
                                         <Input
