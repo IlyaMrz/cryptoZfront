@@ -23,6 +23,7 @@ function SourceCodeLinks() {
                         </Text>
 
                         <Link
+                            textDecoration="underline"
                             color="white"
                             href="https://github.com/IlyaMrz/cryptoZfront"
                             isExternal
@@ -31,6 +32,7 @@ function SourceCodeLinks() {
                             This React App Source Code <ExternalLinkIcon mb="2px" mx="2px" />
                         </Link>
                         <Link
+                            textDecoration="underline"
                             color="white"
                             href="https://github.com/IlyaMrz/cryptoZ"
                             isExternal
@@ -39,6 +41,7 @@ function SourceCodeLinks() {
                             Ethereum Contract Source Code <ExternalLinkIcon mb="2px" mx="2px" />
                         </Link>
                         <Link
+                            textDecoration="underline"
                             color="white"
                             href="https://cryptozombies.io/ru/course"
                             isExternal
@@ -47,6 +50,37 @@ function SourceCodeLinks() {
                             App based on this Crypto Zombies course{" "}
                             <ExternalLinkIcon mb="2px" mx="2px" />
                         </Link>
+                        <Flex
+                            cursor="default"
+                            direction="column"
+                            className="interactField"
+                            color="white"
+                        >
+                            <Text>
+                                To look up on full functional of this Smart Contract you could use
+                                this ABI and Address
+                            </Text>
+                            <Link
+                                textDecoration="underline"
+                                isExternal
+                                href="https://raw.githubusercontent.com/IlyaMrz/cryptoZ/main/cryptoZombiesABI.json"
+                            >
+                                ABI file <ExternalLinkIcon mb="2px" mx="2px" />
+                            </Link>
+                            <Text>Address: 0x185Eb02Bdd555A3920b40496FBEd13098E269BA0</Text>
+                            <Text>
+                                A handy site for this purpose
+                                <Link
+                                    textDecoration="underline"
+                                    isExternal
+                                    href="https://justsmartcontracts.dev/"
+                                >
+                                    {"  "}
+                                    justsmartcontracts.dev
+                                    <ExternalLinkIcon mb="2px" mx="2px" />
+                                </Link>
+                            </Text>
+                        </Flex>
                     </Flex>
                 </Flex>
             </Flex>
