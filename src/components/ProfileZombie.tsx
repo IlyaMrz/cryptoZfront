@@ -307,7 +307,7 @@ function ProfileZombie({ id }: IProps) {
                 </Text>
             )}
             <Box mt="10px" color="red.400">
-                * Warning - Be sure zombie have required level for certain action
+                * Warning - Be sure a zombie has required level for certain action
             </Box>
         </Flex>
     );
