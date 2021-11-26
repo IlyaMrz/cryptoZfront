@@ -42,7 +42,6 @@ function ProfileZombie({ id }: IProps) {
     } = useContractMethod_fixd("changeName");
     function handleChangeName() {
         if (newName) {
-            console.log("newName", newName);
             const idN = Math.floor(id);
             toChangeName(idN, newName);
         }
