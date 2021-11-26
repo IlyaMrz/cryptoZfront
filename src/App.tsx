@@ -53,7 +53,10 @@ function App() {
                     </>
                 ) : (
                     <Text width="100%" color="white" textAlign="center">
-                        Please Login to proceed
+                        Please Login to proceed<br></br>
+                        <Text mt="3-px" color="#4576bd">
+                            *Ropsten Ethereum
+                        </Text>
                     </Text>
                 )}
             </Layout>
